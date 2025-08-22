@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <link rel="stylesheet" href="./Dashboard.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar d-flex flex-column p-3">
+        <h4 class="mb-4">Urbix</h4>
+        <ul class="nav flex-column">
+            <h6>MAIN</h6>
+            <li><a href="#" class="nav-link active"><i class="bi bi-grid me-2"></i> Dashboards</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-basket me-2"></i> E-Commerce</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-mortarboard me-2"></i> School</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-graph-up me-2"></i> Sales Analytics</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-share me-2"></i> Social Media</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-app me-2"></i> Applications</a></li>
+            <li><a href="#" class="nav-link"></a></li>
+            <h6>PAGES</h6>
+            <li class="nav-item">
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#authMenu" role="button">
+                    <span><i class="bi bi-person"></i> Authentication</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="authMenu">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">Login</a></li>
+                        <li><a class="nav-link" href="#">Register</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#pagesMenu" role="button">
+                    <span><i class="bi bi-file-earmark"></i> Pages</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="pagesMenu">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">About</a></li>
+                        <li><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </li>
+            <h6>COMPONENTS</h6>
+            <li>
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#baseMenu">
+                    <span><i class="bi bi-puzzle"></i> Base UI</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="baseMenu">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">Buttons</a></li>
+                        <li><a class="nav-link" href="#">Cards</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#advMenu">
+                    <span><i class="bi bi-ui-checks-grid"></i> Advanced UI</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="advMenu">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">Modals</a></li>
+                        <li><a class="nav-link" href="#">Carousel</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#formsMenu">
+                    <span><i class="bi bi-ui-radios-grid"></i> Forms</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="formsMenu">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">Basic Forms</a></li>
+                        <li><a class="nav-link" href="#">Advanced Forms</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#tablesMenu">
+                    <span><i class="bi bi-table"></i> Tables</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="tablesMenu">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">Basic Tables</a></li>
+                        <li><a class="nav-link" href="#">Data Tables</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#chartsMenu">
+                    <span><i class="bi bi-graph-up"></i> Charts</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="chartsMenu">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">Line Chart</a></li>
+                        <li><a class="nav-link" href="#">Bar Chart</a></li>
+                    </ul>
+                </div>
+            </li>
+            <h6>ICONS & MAPS</h6>
+            <li>
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#iconsMenu">
+                    <span><i class="bi bi-asterisk"></i> Icons</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="iconsMenu">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">Bootstrap Icons</a></li>
+                        <li><a class="nav-link" href="#">FontAwesome</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#mapsMenu">
+                    <span><i class="bi bi-geo-alt"></i> Maps</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="mapsMenu">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">Google Maps</a></li>
+                        <li><a class="nav-link" href="#">Leaflet</a></li>
+                    </ul>
+                </div>
+            </li>
+            <h6>OTHER</h6>
+            <li>
+                <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                    href="#menuLevels">
+                    <span><i class="bi bi-grid"></i> Menu levels</span>
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="collapse" id="menuLevels">
+                    <ul class="nav flex-column">
+                        <li><a class="nav-link" href="#">Level 1</a></li>
+                        <li><a class="nav-link" href="#">Level 2</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="content">
+
+        <nav class="navbar navbar-expand-lg navbar-custom px-3">
+            <div class="container-fluid">
+                <form class="d-flex me-auto">
+                    <input class="form-control me-2" type="search" placeholder="Search" />
+                </form>
+                <button class="btn btn-outline-secondary me-2" id="darkModeToggle">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+                <div class="d-flex align-items-center">
+                    <img src="D:\Dream_Sport\JavaScript\Dashboard\avatar-3.jpg" style="height: 30px;width:30px;"
+                        class="rounded-circle me-2" alt="User">
+                    <span>Jaydon Levin</span>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="row my-4">
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <h6><i class="bi bi-facebook text-primary me-2"></i> Facebook</h6>
+                    <h4>26,458</h4>
+                    <small class="text-success">+9k likes/day</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <h6><i class="bi bi-instagram text-danger me-2"></i> Instagram</h6>
+                    <h4>33,854</h4>
+                    <small class="text-success">+97k likes/day</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <h6><i class="bi bi-twitter text-info me-2"></i> Twitter</h6>
+                    <h4>36,778</h4>
+                    <small class="text-success">+149k likes/day</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card p-3 shadow-sm" style="height: 500px;">
+                    <h6>Engagement Rate</h6>
+                    <canvas id="engagementChart" height="450"></canvas>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm mb-3" style="height: 500px;">
+                    <h6>Visitor’s Profile</h6>
+                    <canvas id="profileChart" height="180"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <h6>Engaged Users</h6>
+                    <h4>12.2k</h4>
+                    <small class="text-success">↑ 19%</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <h6>Page Impression</h6>
+                    <h4>48</h4>
+                    <small class="text-danger">↓ 8%</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm">
+                    <h6>Page Reach</h6>
+                    <span>
+                        <h2>83.8</h2>
+                    </span>
+                    <small>236+ New users</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-custom" style="margin-top: 20px;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold">Daily visitors</h5>
+                <div>
+                    <button class="btn btn-light">&lt;</button>
+                    <button class="btn btn-light">11-20 Jan</button>
+                    <button class="btn btn-light">&gt;</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="./Screenshot 2025-08-21 175748.png">
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-box mb-3">
+                        <div>25.20K</div>
+                        <small>Facebook</small>
+                    </div>
+                    <div class="stats-box mb-3">
+                        <div>38.94K</div>
+                        <small>Instagram</small>
+                    </div>
+                    <div class="stats-box mb-3">
+                        <div>75.05K</div>
+                        <small>Twitter</small>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-4">
+                <div class="col-md-2">
+                    <div class="legend-box">
+                        <div class="legend-color" style="background:#f0f0ff;"></div>
+                        <span>Productivity &nbsp;</span>
+                        <span class="productivity-up">+1.8K ↑</span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="legend-box">
+                        <div class="legend-color" style="background:#009688;"></div>
+                        <span>Productivity &nbsp;</span>
+                        <span class="productivity-down">-185 ↓</span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="legend-box">
+                        <div class="legend-color" style="background:#5a54f9;"></div>
+                        <span>Productivity &nbsp;</span>
+                        <span class="productivity-up">+230 ↑</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4" style="margin-top: 20px;">
+            <div class="col-lg-6">
+                <div class="card p-3">
+                    <h6 class="fw-bold mb-3">Your Accounts</h6>
+                    <p class="small-text">You have 2 accounts</p>
+                    <button class="btn btn-sm btn-primary mb-3">+ Add Account</button>
+
+                    <div class="account-item">
+                        <img src="D:\Dream_Sport\JavaScript\Dashboard\avatar-3.jpg" class="account-img">
+                        <div class="account-text">
+                            <div class="fw-bold">@samanthawilliam_</div>
+                            <small class="text-muted">Instagram • 278,534 Followers</small>
+                        </div>
+                        <button class="btn btn-outline-primary btn-sm">Active</button>
+                    </div>
+
+                    <div class="account-item">
+                        <img src="D:\Dream_Sport\JavaScript\Dashboard\avatar-3.jpg" class="account-img">
+                        <div class="account-text">
+                            <div class="fw-bold">@samanthawilliam_</div>
+                            <small class="text-muted">Twitter/X • 48,190 Followers</small>
+                        </div>
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+
+                    <div class="account-item">
+                        <img src="D:\Dream_Sport\JavaScript\Dashboard\avatar-3.jpg" class="account-img">
+                        <div class="account-text">
+                            <div class="fw-bold">@samanthawilliam_</div>
+                            <small class="text-muted">Dribble • 48,190 Followers</small>
+                        </div>
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+
+                    <div class="account-item">
+                        <img src="D:\Dream_Sport\JavaScript\Dashboard\avatar-3.jpg" class="account-img">
+                        <div class="account-text">
+                            <div class="fw-bold">@samanthawilliam_</div>
+                            <small class="text-muted">Behance • 48,190 Followers</small>
+                        </div>
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+
+                    <div class="account-item">
+                        <img src="D:\Dream_Sport\JavaScript\Dashboard\avatar-3.jpg" class="account-img">
+                        <div class="account-text">
+                            <div class="fw-bold">@samanthawilliam_</div>
+                            <small class="text-muted">YouTube • 48,190 Followers</small>
+                        </div>
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card p-3">
+                    <h6 class="fw-bold mb-3">Post Insights</h6>
+                    <p class="small-text">Posted on May 10, 2024 - 6:10pm</p>
+
+                    <div class="mb-4">
+                        <h6>Accounts reached</h6>
+                        <div class="fs-3 fw-bold">5,192,879</div>
+                        <div>
+                            <span class="chart-bar" style="height: 25px;"></span>
+                            <span class="chart-bar" style="height: 35px;"></span>
+                            <span class="chart-bar" style="height: 20px;"></span>
+                            <span class="chart-bar" style="height: 40px;"></span>
+                            <span class="chart-bar" style="height: 15px;"></span>
+                            <span class="chart-bar" style="height: 25px;"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6>Followers</h6>
+                        <div class="fs-5 fw-bold">+2,953</div>
+                        <div>
+                            <span class="chart-bar" style="height: 20px;"></span>
+                            <span class="chart-bar" style="height: 30px;"></span>
+                            <span class="chart-bar" style="height: 40px;"></span>
+                            <span class="chart-bar" style="height: 20px;"></span>
+                            <span class="chart-bar" style="height: 30px;"></span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h6>Unique Finding</h6>
+                        <p class="small-text">You have gained more reach and followers when the post is related to
+                            workspace or
+                            productivity. Keep it up!</p>
+                        <button class="subscribe-btn">Subscribe for another finding</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-8">
+                <div class="card p-3 shadow-sm">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5><b>Global Reach</b></h5>
+                            <small class="text-success fw-bold">+8.6% <span class="text-dark">Than last
+                                    month</span></small>
+                        </div>
+                        <div class="export-btn">
+                            <i class="bi bi-download"></i>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <p>Indonesia</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                            <p>India</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 60%"></div>
+                            </div>
+                            <p>America</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 80%"></div>
+                            </div>
+                            <p>Europe</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 50%"></div>
+                            </div>
+                            <p>Other</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" style="width: 20%"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="map-container">
+                                <img src="D:\Dream_Sport\JavaScript\Dashboard\Screenshot 2025-08-21 180706.png"
+                                    class="world-map" alt="World Map">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 shadow-sm" style="height: 440px;">
+                    <div class="d-flex justify-content-between">
+                        <h6><b>Segmentation Age</b></h6>
+                        <i class="bi bi-three-dots"></i>
+
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="legend-box male-box"></span>
+                        <span class="legend-text me-4">Male</span>
+
+                        <span class="legend-box female-box"></span>
+                        <span class="legend-text">Female</span>
+
+                    </div>
+                    <img src="./Screenshot 2025-08-21 180946.png">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        const toggleBtn = document.getElementById("darkModeToggle"); // aa line ma html jenu id  darkModeToggle che tene toggleBtn variable ma lave che 
+        toggleBtn.addEventListener("click", () => {  //jyare button click thase, dark mode toggle thase 
+            document.body.classList.toggle("dark"); //aa line ma body ma dark class add/remove thase
+            toggleBtn.innerHTML = document.body.classList.contains("dark") // aa line ma check kare che ke body ma dark class che ke nahi 
+                ? '<i class="bi bi-sun-fill"></i>'
+                : '<i class="bi bi-moon-fill"></i>';
+        });
+
+        const ctx = document.getElementById("engagementChart"); //  aa line ma canvas jenu id engagementChart che tene ctx variable ma lave che
+        new Chart(ctx, { // aa line ma Chart.js ni madad thi chart banave che
+            type: "bar", // bar chart banave che
+            data: { // aa line ma data set kare che
+                labels: ["01 Jan", "02 Jan", "03 Jan", "04 Jan", "05 Jan", "06 Jan", "07 Jan"], // aa line ma labels set kare che
+                datasets: [ // aa line ma datasets set kare che
+                    {
+                        label: "Engagement",
+                        data: [400, 600, 350, 700, 250, 400, 300],
+                        backgroundColor: "rgba(54, 162, 235, 0.7)"
+                    }
+                ]
+            },
+            options: { responsive: true } // aa line ma options set kare che ke chart responsive hoy
+        });
+
+        const profile = document.getElementById("profileChart"); // aa line ma canvas jenu id profileChart che tene profile variable ma lave che
+        new Chart(profile, { // aa line ma Chart.js ni madad thi chart banave che
+            type: "doughnut", // doughnut chart banave che
+            data: {
+                labels: ["Male", "Female"],
+                datasets: [{
+                    data: [30, 70],
+                    backgroundColor: ["#6c63ff", "#ff66b2"]
+                }]
+            },
+            options: { responsive: true }
+        });
+    </script>
+</body>
+
+</html>
